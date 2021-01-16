@@ -1,0 +1,1 @@
+/usr/bin/c++  -O2  -rdynamic CMakeFiles/sample.dir/src/sample.cpp.o  -o sample 
