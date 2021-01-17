@@ -1,7 +1,7 @@
 
 
-#ifndef EXP_H
-#define EXP_H
+#ifndef MULTIPLY_H
+#define MULTIPLY_H
 
 #include <cmath>
 

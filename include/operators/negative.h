@@ -1,6 +1,6 @@
 
-#ifndef MINUS_H
-#define MINUS_H
+#ifndef NEGATIVE_H
+#define NEGATIVE_H
 
 #include <cmath>
 
@@ -13,16 +13,16 @@
 */
 
 
-struct Minus : public Operator
+struct Negative : public Operator
 {
     static Tensor::Ptr op(const Tensor::Ptr &x)
     {
-        Operator::Ptr oprator_ = std::make_shared<Minus> (x);
+        Operator::Ptr oprator_ = std::make_shared<Negative> (x);
         Graph::graph.add(oprator_, oprator_->res);
         return oprator_->res;
     }
 
-    Minus(const Tensor::Ptr &x)
+    Negative(const Tensor::Ptr &x)
     {
         this->paramters.push_back(x);
         calculate();
@@ -36,7 +36,7 @@ struct Minus : public Operator
         res->data = -x;
 
         // diffirential data
-        diffirentials.push_back(Tensor::Get(1));
+        diffirentials.push_back(Tensor::Get(-1));
     }
 };
 

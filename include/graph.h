@@ -14,8 +14,9 @@ struct Graph
 {
     static Graph graph;
 
-    Graph() {}
+    std::map<Tensor::Ptr, Operator::Ptr> mapping;
 
+    Graph() {}
     ~Graph() {}
 
     void backward(Tensor::Ptr result)
@@ -51,7 +52,6 @@ struct Graph
         mapping[tensor] = _operator;
     }
 
-    std::map<Tensor::Ptr, Operator::Ptr> mapping;
 };
 
 #endif
